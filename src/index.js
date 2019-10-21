@@ -91,9 +91,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
         if (image.size < 1000001 && valid !== null) {
           newLi.id = Date.now()-Math.floor(Math.random() * (100 - 1 + 1)) + 1;;
-          // img.src = `../img/${image.name}`;
-          let searchArr = imageArray.filter(v=> v.name === image.name);
-          img.src = searchArr[0].url;
+          img.src = `../img/${image.name}`;
+          // let searchArr = imageArray.filter(v=> v.name === image.name);
+          // img.src = searchArr[0].url;
           img.className = "thumbnail";
           img.id = Date.now();
           name.innerText = `file name = ${image.name}`;
