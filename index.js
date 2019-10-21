@@ -100,6 +100,11 @@ document.addEventListener("DOMContentLoaded", () => {
           find.parentNode.removeChild(find);
         });
 
+        setTimeout(()=>{
+          $('button.coordinates').trigger('click');
+        },1000)
+        
+
         const imageBtn = document.querySelectorAll(".remove__item");
 
         for (let i = 0; i < imageBtn.length; i++) {
