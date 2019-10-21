@@ -1,8 +1,8 @@
-// const HtmlWebPackPlugin = require('html-webpack-plugin');
+const HtmlWebPackPlugin = require('html-webpack-plugin');
 
 module.exports = {
     mode: 'development', //bez optymalizacji dla większej czytelności kodu
-    entry: './index.js',
+    entry: './src/index.js',
     //watch: true,
     watchOptions: {
         poll: true,
@@ -52,11 +52,11 @@ module.exports = {
                 ],
               }
         ]
-    }
-    // plugins: [
-    //     new HtmlWebPackPlugin({
-    //         template: './src/template.html',
-    //         filename: './index.html'
-    //     })
-    // ]
+    },
+    plugins: [
+        new HtmlWebPackPlugin({
+            template: './src/template.html',
+            filename: './index.html'
+        })
+    ]
 }
