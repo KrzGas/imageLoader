@@ -45,6 +45,36 @@ document.addEventListener("DOMContentLoaded", () => {
       arrayObj.push(fileObj);
     }
 
+    // ![DSCN0010](https://user-images.githubusercontent.com/44750240/67182519-b61b2680-f3df-11e9-8a25-3bf72ea2f74a.JPG)
+    // ![DSCN0012](https://user-images.githubusercontent.com/44750240/67182592-e6fb5b80-f3df-11e9-86d1-c07f1407a60f.JPG)
+    // ![DSCN0021](https://user-images.githubusercontent.com/44750240/67182648-f1b5f080-f3df-11e9-9edc-dbda844e9800.JPG)
+    // ![DSCN0025](https://user-images.githubusercontent.com/44750240/67182649-f1b5f080-f3df-11e9-93f2-7d36057a444f.JPG)
+    // ![DSCN0027](https://user-images.githubusercontent.com/44750240/67182651-f1b5f080-f3df-11e9-88f6-c83c2616b7e0.JPG)
+    // ![DSCN0029](https://user-images.githubusercontent.com/44750240/67182653-f1b5f080-f3df-11e9-9faf-a841a54d9dd6.JPG)
+    // ![DSCN0038](https://user-images.githubusercontent.com/44750240/67182655-f24e8700-f3df-11e9-9203-64ec6054cc73.JPG)
+    // ![DSCN0040](https://user-images.githubusercontent.com/44750240/67182658-f24e8700-f3df-11e9-946e-944e99434f4c.JPG)
+    // ![DSCN0042](https://user-images.githubusercontent.com/44750240/67182660-f24e8700-f3df-11e9-81c2-6d0343f37268.JPG)
+    // ![Animal](https://user-images.githubusercontent.com/44750240/67182692-fd091c00-f3df-11e9-8d75-0100fe6b234c.png)
+    // ![bg](https://user-images.githubusercontent.com/44750240/67182694-fd091c00-f3df-11e9-8d04-5454986a7b4d.jpg)
+    // ![drive](https://user-images.githubusercontent.com/44750240/67182695-fd091c00-f3df-11e9-8045-4383159dcd6c.jpg)
+    // ![pollen](https://user-images.githubusercontent.com/44750240/67182696-fd091c00-f3df-11e9-8991-61e079223b61.jpg)
+
+    const imageArray = [
+      {name: 'DSCN0010.JPG', url: 'https://user-images.githubusercontent.com/44750240/67182519-b61b2680-f3df-11e9-8a25-3bf72ea2f74a.JPG'},
+      {name: 'DSCN0012.JPG', url: ' https://user-images.githubusercontent.com/44750240/67182592-e6fb5b80-f3df-11e9-86d1-c07f1407a60f.JPG'},
+      {name: 'DSCN0021.JPG', url: ' https://user-images.githubusercontent.com/44750240/67182648-f1b5f080-f3df-11e9-9edc-dbda844e9800.JPG'},
+      {name: 'DSCN0025.JPG', url: ' https://user-images.githubusercontent.com/44750240/67182649-f1b5f080-f3df-11e9-93f2-7d36057a444f.JPG'},
+      {name: 'DSCN0027.JPG', url: ' https://user-images.githubusercontent.com/44750240/67182651-f1b5f080-f3df-11e9-88f6-c83c2616b7e0.JPG'},
+      {name: 'DSCN0029.JPG', url: ' https://user-images.githubusercontent.com/44750240/67182653-f1b5f080-f3df-11e9-9faf-a841a54d9dd6.JPG'},
+      {name: 'DSCN0038.JPG', url: ' https://user-images.githubusercontent.com/44750240/67182655-f24e8700-f3df-11e9-9203-64ec6054cc73.JPG'},
+      {name: 'DSCN0040.JPG', url: ' https://user-images.githubusercontent.com/44750240/67182658-f24e8700-f3df-11e9-946e-944e99434f4c.JPG'},
+      {name: 'DSCN0042.JPG', url: ' https://user-images.githubusercontent.com/44750240/67182660-f24e8700-f3df-11e9-81c2-6d0343f37268.JPG'},
+      {name: 'Animal.png', url: ' https://user-images.githubusercontent.com/44750240/67182692-fd091c00-f3df-11e9-8d75-0100fe6b234c.png'},
+      {name: 'bg.jpg', url: ' https://user-images.githubusercontent.com/44750240/67182694-fd091c00-f3df-11e9-8d04-5454986a7b4d.jpg'},
+      {name: 'drive.jpg', url: ' https://user-images.githubusercontent.com/44750240/67182695-fd091c00-f3df-11e9-8045-4383159dcd6c.jpg'},
+      {name: 'pollen.jpg', url: ' https://user-images.githubusercontent.com/44750240/67182696-fd091c00-f3df-11e9-8991-61e079223b61.jpg'}
+    ]
+
     loadBtn.addEventListener("click", () => {
       for (let index = 0; index < arrayObj.length; index++) {
         const image = arrayObj[index];
@@ -61,7 +91,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
         if (image.size < 1000001 && valid !== null) {
           newLi.id = Date.now()-Math.floor(Math.random() * (100 - 1 + 1)) + 1;;
-          img.src = `../img/${image.name}`;
+          // img.src = `../img/${image.name}`;
+          let searchArr = imageArray.filter(v=> v.name === image.name);
+          img.src = searchArr[0].url;
           img.className = "thumbnail";
           img.id = Date.now();
           name.innerText = `file name = ${image.name}`;
